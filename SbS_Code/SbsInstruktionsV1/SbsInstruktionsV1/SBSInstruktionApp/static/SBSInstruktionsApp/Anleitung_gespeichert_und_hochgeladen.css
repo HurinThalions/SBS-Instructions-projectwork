@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+ }
 /* --------------------------------Header--------------------------- */
 .header {
     display: flex;
@@ -17,6 +20,11 @@
 }
 
 .boxumAErstellen {
+    background-image: linear-gradient(#d6e1e875, #1d415967);
+}
+
+.boxumProfil:hover, .boxumAErstellen:hover {
+    cursor: pointer;
     background-image: linear-gradient(#d6e1e875, #1d415967);
 }
 
@@ -41,8 +49,7 @@
 }
 
 .profil:hover, .aErstellen:hover {
-    max-width: 50px;
-    max-height: 50px;
+    cursor:pointer;
 }
 
 .profil {

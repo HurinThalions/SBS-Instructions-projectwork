@@ -88,11 +88,6 @@ body {
     border: 0px;
 }
 
-.profil:hover, .aErstellen:hover {
-    max-width: 50px;
-    max-height: 50px;
-}
-
 .profil {
     background-image: url("Profil_Logo.svg");
     background-size: cover;

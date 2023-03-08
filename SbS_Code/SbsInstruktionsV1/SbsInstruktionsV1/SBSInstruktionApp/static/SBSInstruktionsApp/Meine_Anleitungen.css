@@ -71,10 +71,6 @@ body {
     border: 0px;
 }
 
-.profil:hover, .aErstellen:hover {
-    cursor: pointer;
-}
-
 .profil {
     background-image: url("Profil_Logo.svg");
     background-size: cover;
@@ -85,6 +81,10 @@ body {
     background-image: url("Anleitunghinzufuegen.svg");
     background-size: cover;
     background-color: white;
+}
+
+.profil:hover, .aErstellen:hover {
+    cursor: pointer;
 }
 
 .logocontainer {
@@ -109,22 +109,12 @@ body {
     height: 100%;
 }
 
-.searchbar {
-    justify-content: center;
-    margin-top: 5%;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-bottom: 30px;
-    width: 50%;
-}
-
-.Suchleiste {
-    border-radius: 17px;
-    border-color: #000;
-    border-width: 2px;
-    height: 40px;
-    padding-left: 14px;
+.Überschrift {
+    margin-top: 50px;
+    font-size: 30px;
+    font-style: bold;
     width: 100%;
+    text-align: center;
 }
 
 .Positiontabelle {

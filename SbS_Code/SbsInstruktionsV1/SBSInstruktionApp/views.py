@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
-from django.views import generic
+from django.views import generic, View
 from .models import Anleitung, Anleitungsschritt, Komponenten
 
 # Create your views here.
@@ -27,6 +27,10 @@ def entwurf_gespeichert(request):
 anleitung = Anleitung.objects.all()
 anleitungstitel = anleitung[0]
 schrittinhalte = Anleitungsschritt.objects.all()
+
+class MyView(View):
+    def get(self, request):
+        return HttpResponse('Anleitung_durchgehen.html')
 
 
 def anleitung_durchgehen(request):
