@@ -10,8 +10,7 @@ from .models import Anleitung, Anleitungsschritt, Komponenten
 def start(request):
     return render(request, 'Startbildschirm.html')
 
-# Anleitung erstellen
-def add_page(request):
+def add(request):
     return render(request, 'Add_page.html')
 
 def anleitungsschritt(request):

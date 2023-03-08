@@ -9,9 +9,8 @@ urlpatterns = [
     path('Startbildschirm.html', views.start, name='startbildschirm'),
 
     path('', views.start, name='start'),
-    path('Add_page.html/', views.add_page, name='add_page'),
     path('AnleitungSchritte.html', views.anleitungsschritt, name='anleitungschritte'),
-
+    path('a', views.add, name='neueAnleitung'),
     path('Entwurf_gespeichert.html', views.entwurf_gespeichert, name='anleitungalsentwurfbeendet'),
     path('Anleitung_gespeichert_und_hochgeladen.html', views.anleitung_gespeichert_und_hochgeladen, name='anleitungGespeichert'),
     
