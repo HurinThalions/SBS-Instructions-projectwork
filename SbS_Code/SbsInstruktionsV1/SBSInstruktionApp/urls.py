@@ -15,25 +15,23 @@ urlpatterns = [
     path('Anleitung_gespeichert_und_hochgeladen.html', views.anleitung_gespeichert_und_hochgeladen, name='anleitungGespeichert'),
     
 
-    path('Anleitung_durchgehen.html', views.anleitung_durchgehen, name='ersteSeiteanleitungdurchgehen'),
+    # path('Anleitung_durchgehen.html', views.anleitung_durchgehen, name='ersteSeiteanleitungdurchgehen'),
     path('Anleitung_durchgehen2.html', views.anleitung_durchgehen2, name='zweiteSeiteanleitungdurchgehen'),
-    path('Anleitung_durchgehen3.html', views.anleitung_durchgehen3, name='dritteSeiteanleitungdurchgehen'),
-    path('Anleitung_durchgehen4.html', views.anleitung_durchgehen4, name='vierteSeiteanleitungdurchgehen'),
-    path('Anleitung_durchgehen5.html', views.anleitung_durchgehen5, name='fünfteSeiteanleitungdurchgehen'),
-    path('Anleitung_durchgehen6.html', views.anleitung_durchgehen6, name='sechsteSeiteanleitungdurchgehen'),
+    # path('Anleitung_durchgehen3.html', views.anleitung_durchgehen3, name='dritteSeiteanleitungdurchgehen'),
+    # path('Anleitung_durchgehen4.html', views.anleitung_durchgehen4, name='vierteSeiteanleitungdurchgehen'),
+    # path('Anleitung_durchgehen5.html', views.anleitung_durchgehen5, name='fünfteSeiteanleitungdurchgehen'),
+    # path('Anleitung_durchgehen6.html', views.anleitung_durchgehen6, name='sechsteSeiteanleitungdurchgehen'),
     
 
     path('Mein_Profil.html', views.profil, name='meinProfil'),
 
     path('Meine_Anleitungen.html', views.meine_anleitungen, name='persanleitungen'),
 
-    path('Anleitung_durchgehen.html', views.MyView.as_view()),
-
 
     # Redundant Views in generic views written
     # Anleitung Durchgehen
 
-    path('Anleitung_durchgehen/<int:pk>', views.AnleitungViews.as_view(), name='anleitungdurchgehen'),
+    path('Anleitung_durchgehen/<int:pk>/', views.AnleitungView.as_view(), name='anleitungdurchgehen'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
