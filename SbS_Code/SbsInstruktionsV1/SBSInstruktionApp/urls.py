@@ -16,7 +16,7 @@ urlpatterns = [
     
 
     # path('Anleitung_durchgehen.html', views.anleitung_durchgehen, name='ersteSeiteanleitungdurchgehen'),
-    path('Anleitung_durchgehen2.html', views.anleitung_durchgehen2, name='zweiteSeiteanleitungdurchgehen'),
+    # path('Anleitung_durchgehen2.html', views.anleitung_durchgehen2, name='zweiteSeiteanleitungdurchgehen'),
     # path('Anleitung_durchgehen3.html', views.anleitung_durchgehen3, name='dritteSeiteanleitungdurchgehen'),
     # path('Anleitung_durchgehen4.html', views.anleitung_durchgehen4, name='vierteSeiteanleitungdurchgehen'),
     # path('Anleitung_durchgehen5.html', views.anleitung_durchgehen5, name='fünfteSeiteanleitungdurchgehen'),
@@ -31,7 +31,7 @@ urlpatterns = [
     # Redundant Views in generic views written
     # Anleitung Durchgehen
 
-    path('Anleitung_durchgehen/<int:pk>/', views.AnleitungView.as_view(), name='anleitungdurchgehen'),
+    path('Anleitung_durchgehen/<int:pk>/', views.AnleitungListView.as_view(), name='anleitungdurchgehen'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
