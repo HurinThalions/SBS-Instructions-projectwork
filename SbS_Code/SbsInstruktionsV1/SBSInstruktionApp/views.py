@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views import View
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .models import Anleitung, Anleitungsschritt, Komponenten
 
@@ -40,7 +40,16 @@ class AnleitungListView(ListView):
     def get_queryset(self):
         self.anleitung = get_object_or_404(Anleitung)
         return Anleitungsschritt.objects.filter(anleitung = self.anleitung)
-    
+
+
+class AnleitungDetailView(DetailView):
+    model = Anleitung
+    template_name = 'anleitung_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['anleitungsbezeichnungen'] = self.object.anleitungsbezeichnungen.all()
+        return context
 
 # def anleitung_durchgehen(request):
 

@@ -79,3 +79,24 @@ function fortschritt(seitennummer, anzahlseitengesamt) {
     polygonhell.setAttribute ('fill', '#D9B4B4');
 
 }
+
+var steps = []
+
+var currentStep = 0;
+
+function showNextStep() {
+
+    var content = document.getElementById("vorzurueck");
+
+    content.innerHTML = "";
+
+    var nextStep = steps[currentStep];
+
+    content.innerHTML = nextStep;
+
+    currentStep++;
+
+    if(currentStep >= steps.length) {
+        document.getElementById("img")
+    }
+}
