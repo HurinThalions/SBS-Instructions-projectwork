@@ -23,7 +23,7 @@ class Anleitungsschritt(models.Model):
     # def __str__(self):
     #     return self.schrittbenennung
 
-class Komponenten(models.Model):
+class Komponente(models.Model):
     anleitungsschritt = models.ForeignKey(Anleitungsschritt, on_delete=models.CASCADE)
     kompbeschreibung = models.CharField(max_length=100)
 #    kompbild = models.ImageField(upload_to='images/Kompbilder', default=None)
