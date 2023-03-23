@@ -94,12 +94,12 @@
 
                     <div>
                         <div class="titel">
-                            {{ anleitungstitel }}
+                            {{ anleitung.titel }}
                             <!-- Gebratener Seehecht mit Kartoffelstreifen -->
                         </div>
                         <div id="schritt">
                             <p class="abstand">Schritt 1:</p> <p class="abstand"><u>
-                                {{ schritt1 }}
+                                {{ anleitungsbezeichnung.schrittbenennung }}
                                 <!-- Kartoffeln backen -->
                             </u></p>
                         </div>
@@ -109,7 +109,7 @@
                         <div class="unterueberschrift">Beschreibung:</div>
                         <div class="titel">
                             <div class="informationsrahmen">
-                                {{ schritt1beschreibung }}
+                                {{ anleitungsbezeichnung.beschreibung }}
                                 <!-- Kartoffeln in Spalten schneiden. Auf ein mit Bachpapier belegtes Backblech mit ÖL vermengen. Für 30min backen. -->
                             </div>
                         </div>
@@ -120,11 +120,11 @@
                         <div class="informationsrahmen2" >
                             <div id="komponente1" class="einzelneKomponente">
                                 <img  class="komponentenbild" src="../../static/Rohe_Kartoffeln.jpg">
-                                <p>{{ komp0 }}</p>                               
+                                <p>{{ komponente.kompbeschreibung }}</p>                               
                             </div>
                             <div class="einzelneKomponente">
                                 <img class="komponentenbild" src="../../static/Oel.jpg">
-                                <p>{{ komp1 }}</p>                               
+                                <p>{{ anleitungsbezeichnung.komponente_set.first.komponentenbeschreibung }}</p>                               
                             </div>
                         </div>
                     </div>

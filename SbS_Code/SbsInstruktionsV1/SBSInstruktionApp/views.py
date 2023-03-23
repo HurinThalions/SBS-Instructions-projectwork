@@ -44,11 +44,13 @@ class AnleitungListView(ListView):
 
 class AnleitungDetailView(DetailView):
     model = Anleitung
-    template_name = 'anleitung_detail.html'
+    template_name = 'Anleitung_durchgehen.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        anleitung = self.kwargs
         context['anleitungsbezeichnungen'] = self.object.anleitungsbezeichnungen.all()
+        context['komponenten'] = Komponente.objects.filter(anleitungsbezeichnung__anleitung=anleitung)
         return context
 
 # def anleitung_durchgehen(request):
