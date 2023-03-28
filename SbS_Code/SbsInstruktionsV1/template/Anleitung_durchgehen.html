@@ -94,12 +94,17 @@
 
                     <div>
                         <div class="titel">
-                            {{ anleitung.titel }}
+                            {{ object.anleittitel }}
                             <!-- Gebratener Seehecht mit Kartoffelstreifen -->
                         </div>
                         <div id="schritt">
                             <p class="abstand">Schritt 1:</p> <p class="abstand"><u>
-                                {{ anleitungsbezeichnung.schrittbenennung }}
+                                {% if second_pk %}
+                                    {% with anleitungsschritt=anleitung.anleitungsbezeichnungen.get(pk=second_pk) %}
+                                        <h2>{{ anleitungsschritt.schrittbenennung }}</h2>
+                                        <p>{{ anleitungsschritt.beschreibung }}</p>
+                                    {% endwith %}
+                                {% endif %}
                                 <!-- Kartoffeln backen -->
                             </u></p>
                         </div>

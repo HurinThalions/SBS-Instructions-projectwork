@@ -31,7 +31,7 @@ urlpatterns = [
     # Redundant Views in generic views written
     # Anleitung Durchgehen
 
-    path('Anleitung_durchgehen/<int:pk>/', views.AnleitungDetailView.as_view(), name='anleitungdurchgehen'),
+    path('Anleitung_durchgehen/<int:pk1>/<int:pk2>/', views.AnleitungDetailView.as_view(), name='anleitungdurchgehen'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
