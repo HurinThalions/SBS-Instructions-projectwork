@@ -34,14 +34,6 @@ def entwurf_gespeichert(request):
 #         return HttpResponse('Anleitung_durchgehen.html')
 
 
-class AnleitungListView(ListView):
-    template_name = 'Anleitung_durchgehen.html'
-
-    def get_queryset(self):
-        self.anleitung = get_object_or_404(Anleitung)
-        return Anleitungsschritt.objects.filter(anleitung = self.anleitung)
-
-
 class AnleitungDetailView(DetailView):
 
     model = Anleitung
@@ -60,9 +52,11 @@ class AnleitungDetailView(DetailView):
 
         anleitung = self.kwargs['pk1']
         anleitungsschritt = self.kwargs['pk2']
+        
         context['anleitungsbezeichnungen'] = self.object.anleitungsbezeichnungen.all().values('schrittbenennung', 'beschreibung')
         context['komponenten'] = Komponente.objects.filter(anleitungsschritt__anleitung=anleitung)
         context['anleitungsschritt'] = anleitungsschritt
+
         return context
 
 # def anleitung_durchgehen(request):

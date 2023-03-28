@@ -26,25 +26,25 @@
     <!-- Divider für Vollbild-Popup -->
     <div id="overlayVollbild">
         <div class="vollbild">
-            <img class="schliessen" src="../../static/closecircle.svg" onclick="popupOffV()">
+            <img class="schliessen" src="../../../static/closecircle.svg" onclick="popupOffV()">
         </div>
     </div>
 
       <!-- Divider für Schritte-Popup -->
      <div id="overlaySchritte">
         <div class="schritte">
-            <img class="schliessen" src="../../static/closecircle.svg" onclick="popupOffS()">
+            <img class="schliessen" src="../../../static/closecircle.svg" onclick="popupOffS()">
             <div id="schrittefenster">
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen.html'">
-                    <img id="Bild1" src="../../static/Ofenkartoffeln.jpg">
+                    <img id="Bild1" src="../../../static/Ofenkartoffeln.jpg">
                     <p>Schritt 1</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen2.html'">
-                    <img id="Bild2" src="../../static/GeschnitteneGurkeKnoblauch.jpeg">
+                    <img id="Bild2" src="../../../static/GeschnitteneGurkeKnoblauch.jpeg">
                     <p>Schritt 2</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen3.html'">
-                    <img id="Bild3" src="../../static/Zaziki.jpeg">
+                    <img id="Bild3" src="../../../static/Zaziki.jpeg">
                     <p>Schritt 3</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen4.html'">
@@ -52,11 +52,11 @@
                     <p>Schritt 4</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen5.html'">
-                    <img id="Bild5" src="../../static/FischPfanne.jpeg">
+                    <img id="Bild5" src="../../../static/FischPfanne.jpeg">
                     <p>Schritt 5</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen6.html'">
-                    <img id="Bild6" src="../../static/Seehecht_angeordnet.jpg">
+                    <img id="Bild6" src="../../../static/Seehecht_angeordnet.jpg">
                     <p>Schritt 6</p>
                 </div>
             </div>
@@ -75,7 +75,7 @@
     </div>
 
     <div class="logocontainer" onclick="location.href='Startbildschirm.html'">
-        <img class="logo" src="../../static/Logo.svg">
+        <img class="logo" src="../../../static/Logo.svg">
     </div>
 
     <!-- Hintergrund -->
@@ -83,7 +83,7 @@
 
         <!-- Seiten-Icon -->
         <button id="ueberblick">
-            <img id="sizeicon" src="../../static/Overview.svg" onclick="popupOnS()">
+            <img id="sizeicon" src="../../../static/Overview.svg" onclick="popupOnS()">
         </button>
 
         <!-- --------------------------Anzeigen Schritt X---------------------------- -->
@@ -99,7 +99,7 @@
                         </div>
                         <div id="schritt">
                             <p class="abstand">Schritt 1:</p> <p class="abstand"><u>
-                                {{ anleitung.anleitungschritt.schrittbenennung }}
+                                {{ anleitungschritt.schrittbenennung }}
                                 <!-- Kartoffeln backen -->
                             </u></p>
                         </div>
@@ -119,12 +119,12 @@
                         <div class="unterueberschrift">Komponenten:</div>
                         <div class="informationsrahmen2" >
                             <div id="komponente1" class="einzelneKomponente">
-                                <img  class="komponentenbild" src="../../static/Rohe_Kartoffeln.jpg">
+                                <img  class="komponentenbild" src="../../../static/Rohe_Kartoffeln.jpg">
                                 <!-- Hier Komponente einfuegen -->
                                 <p></p>                               
                             </div>
                             <div class="einzelneKomponente">
-                                <img class="komponentenbild" src="../../static/Oel.jpg">
+                                <img class="komponentenbild" src="../../../static/Oel.jpg">
                                 <!-- Hier Komponente einfuegen -->
                                 <p></p>                               
                             </div>
@@ -141,10 +141,9 @@
         </div>
 
         <div class="vorzurueck">
-            <img class="buttonkleinlinks" src="../../static/Back button.svg" onload="fortschritt(1,6)"  onclick="location.href='Startbildschirm.html'">
+            <img class="buttonkleinlinks" src="../../../static/Back button.svg" onload="fortschritt(1,6)"  onclick="location.href='Startbildschirm.html'">
             <svg id="fortschrittsanzeige" onload="fortschritt(1,6)"></svg>
-            <img class="buttonkleinrechts" src="../../static/weiter.svg"  onclick="location.href='Anleitung_durchgehen2.html'">
-            <img class="buttonkleinrechts" src="../../static/weiter.svg" onclick="showNextStep()">
+            <img class="buttonkleinrechts" src="../../../static/weiter.svg"  onclick="location.href='Anleitung_durchgehen2.html'">
         </div>
         <div class="fortschrittszahl">
             1/6
