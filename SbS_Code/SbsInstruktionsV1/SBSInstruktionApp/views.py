@@ -56,7 +56,6 @@ class AnleitungDetailView(DetailView):
         context['anleitungsbezeichnungen'] = self.object.anleitungsbezeichnungen.all().values('schrittbenennung', 'beschreibung')
         context['komponenten'] = Komponente.objects.filter(anleitungsschritt__anleitung=anleitung)
         context['anleitungsschritt'] = anleitungsschritt
-
         return context
 
 # def anleitung_durchgehen(request):
