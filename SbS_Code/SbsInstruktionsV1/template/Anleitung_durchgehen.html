@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SbS - Anleitung durchgehen</title>
-    <link rel="stylesheet" type="text/css" href="../../static/Anleitung_durchgehen.css">  <!-- Referrenz zu CSS Seite -->
-    <script src="../../static/Anleitung_durchgehen.js"></script> <!-- Referrenz zu JavaScript Seite --> 
+    <link rel="stylesheet" type="text/css" href="../../../static/Anleitung_durchgehen.css">  <!-- Referrenz zu CSS Seite -->
+    <script src="../../../static/Anleitung_durchgehen.js"></script> <!-- Referrenz zu JavaScript Seite --> 
     
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -94,17 +94,12 @@
 
                     <div>
                         <div class="titel">
-                            {{ object.anleittitel }}
+                            {{ anleitung.titel }}
                             <!-- Gebratener Seehecht mit Kartoffelstreifen -->
                         </div>
                         <div id="schritt">
                             <p class="abstand">Schritt 1:</p> <p class="abstand"><u>
-                                {% if second_pk %}
-                                    {% with anleitungsschritt=anleitung.anleitungsbezeichnungen.get(pk=second_pk) %}
-                                        <h2>{{ anleitungsschritt.schrittbenennung }}</h2>
-                                        <p>{{ anleitungsschritt.beschreibung }}</p>
-                                    {% endwith %}
-                                {% endif %}
+                                {{ anleitung.anleitungschritt.schrittbenennung }}
                                 <!-- Kartoffeln backen -->
                             </u></p>
                         </div>
@@ -114,7 +109,7 @@
                         <div class="unterueberschrift">Beschreibung:</div>
                         <div class="titel">
                             <div class="informationsrahmen">
-                                {{ anleitungsbezeichnung.beschreibung }}
+                                {{ anleitung.anleitungschritt.beschreibung }}
                                 <!-- Kartoffeln in Spalten schneiden. Auf ein mit Bachpapier belegtes Backblech mit ÖL vermengen. Für 30min backen. -->
                             </div>
                         </div>
@@ -125,11 +120,13 @@
                         <div class="informationsrahmen2" >
                             <div id="komponente1" class="einzelneKomponente">
                                 <img  class="komponentenbild" src="../../static/Rohe_Kartoffeln.jpg">
-                                <p>{{ komponente.kompbeschreibung }}</p>                               
+                                <!-- Hier Komponente einfuegen -->
+                                <p></p>                               
                             </div>
                             <div class="einzelneKomponente">
                                 <img class="komponentenbild" src="../../static/Oel.jpg">
-                                <p>{{ anleitungsbezeichnung.komponente_set.first.komponentenbeschreibung }}</p>                               
+                                <!-- Hier Komponente einfuegen -->
+                                <p></p>                               
                             </div>
                         </div>
                     </div>

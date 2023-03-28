@@ -47,12 +47,22 @@ class AnleitungDetailView(DetailView):
     model = Anleitung
     template_name = 'Anleitung_durchgehen.html'
 
+    def get_object(self):
+        anleitung = get_object_or_404(Anleitung, pk = self.kwargs['pk1'])
+        anleitungsschritt = get_object_or_404(Anleitungsschritt, pk = self.kwargs['pk2'])
+
+        anleitung.anleitungsschritt = anleitungsschritt
+        return anleitung
+    
     def get_context_data(self, **kwargs):
+        
         context = super().get_context_data(**kwargs)
-        anleitung = self.kwargs['pk']
+
+        anleitung = self.kwargs['pk1']
+        anleitungsschritt = self.kwargs['pk2']
         context['anleitungsbezeichnungen'] = self.object.anleitungsbezeichnungen.all().values('schrittbenennung', 'beschreibung')
         context['komponenten'] = Komponente.objects.filter(anleitungsschritt__anleitung=anleitung)
-        context['second_pk'] = self.kwargs['pk2']
+        context['anleitungsschritt'] = anleitungsschritt
         return context
 
 # def anleitung_durchgehen(request):
