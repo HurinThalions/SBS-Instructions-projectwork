@@ -94,12 +94,14 @@
 
                     <div>
                         <div class="titel">
-                            {{ anleitung.titel }}
+                            <h2>{{ anleitung }}</h2>
                             <!-- Gebratener Seehecht mit Kartoffelstreifen -->
                         </div>
                         <div id="schritt">
                             <p class="abstand">Schritt 1:</p> <p class="abstand"><u>
-                                {{ anleitungsschritt.schrittbenennung }}
+                                {% for anleitungsbezeichnung in anleitungsbezeichnungen %}
+                                    <p>{{ anleitungsbezeichnung.schrittbenennung }}</ü>
+                                {% endfor %}
                                 <!-- Kartoffeln backen -->
                             </u></p>
                         </div>
@@ -109,7 +111,9 @@
                         <div class="unterueberschrift">Beschreibung:</div>
                         <div class="titel">
                             <div class="informationsrahmen">
-                                {{ anleitung.anleitungschritt.beschreibung }}
+                                {% for anleitungsbezeichnung in anleitungsbezeichnungen %}
+                                    <p>{{ anleitungsbezeichnung.beschreibung }}</p>
+                                {% endfor %}
                                 <!-- Kartoffeln in Spalten schneiden. Auf ein mit Bachpapier belegtes Backblech mit ÖL vermengen. Für 30min backen. -->
                             </div>
                         </div>
@@ -121,7 +125,9 @@
                             <div id="komponente1" class="einzelneKomponente">
                                 <img  class="komponentenbild" src="../../../static/Rohe_Kartoffeln.jpg">
                                 <!-- Hier Komponente einfuegen -->
-                                <p></p>                               
+                                {% for komponente in komponenten %}
+                                    <p>{{ komponenten.komponente }}</p>
+                                {% endfor %}
                             </div>
                             <div class="einzelneKomponente">
                                 <img class="komponentenbild" src="../../../static/Oel.jpg">
