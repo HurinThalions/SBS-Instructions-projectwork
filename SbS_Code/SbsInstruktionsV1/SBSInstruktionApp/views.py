@@ -1,9 +1,9 @@
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views import View
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
-from .models import Anleitung, Anleitungsschritt, Komponenten
+from .models import Anleitung, Anleitungsschritt, Komponente
 
 # Create your views here.
 
@@ -34,13 +34,42 @@ def entwurf_gespeichert(request):
 #         return HttpResponse('Anleitung_durchgehen.html')
 
 
-class AnleitungListView(ListView):
+class AnleitungDetailView(DetailView):
+
+    def get_object(self):
+        # Retrieve the Anleitung object using pk1
+        anleitung = get_object_or_404(Anleitung, pk=self.kwargs['pk1'])
+
+        # Retrieve the Anleitungsschritt object using pk2
+        anleitungsschritt = get_object_or_404(Anleitungsschritt, pk=self.kwargs['pk2'])
+
+        # Attach the Anleitungsschritt object to the Anleitung object
+        anleitung.anleitungsschritt = anleitungsschritt
+
+        # Retrieve the corresponding Komponente object
+        komponenten = Komponente.objects.filter(anleitungsschritt=anleitungsschritt).first()
+
+        return anleitung
+    
+    model = Anleitung
     template_name = 'Anleitung_durchgehen.html'
 
-    def get_queryset(self):
-        self.anleitung = get_object_or_404(Anleitung)
-        return Anleitungsschritt.objects.filter(anleitung = self.anleitung)
-    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        anleitung = self.kwargs['pk1']
+        anleitungsschritt = self.kwargs['pk2']
+
+        context['anleitungsbezeichnungen'] = self.object.anleitungsbezeichnungen.filter(pk = self.kwargs['pk2']).values('schrittbenennung', 'beschreibung')
+        context['anleitungsschritt'] = anleitungsschritt
+
+        komponente = Komponente.objects.filter(anleitungsschritt__anleitung = anleitung)
+        context['komponente'] = komponente
+
+        next_komponente = Komponente.objects.filter(anleitungsschritt__anleitung = anleitung, pk__gt = komponente.first().pk).first()
+        context['next_komponente'] = next_komponente        
+        
+        return context
 
 # def anleitung_durchgehen(request):
 
