@@ -44,7 +44,7 @@ body {
 
     /* Einbetten der Box in den Header */
     height: inherit;
-    min-width: 110px;
+    min-width: 10%;
 }
 
 .boxumProfil:hover, .boxumAErstellen:hover {
@@ -76,13 +76,13 @@ body {
 }
 
 .profil {
-    background-image: url("Profil_Logo.svg");
+    background-image: url("../SVG/Profil_Logo.svg");
     background-size: cover;
     background-color: white;
 }
 
 .aErstellen {
-    background-image: url("Anleitunghinzufuegen.svg");
+    background-image: url("../SVG/Anleitunghinzufuegen.svg");
     background-size: cover;
     background-color: white;
 }
@@ -98,7 +98,7 @@ body {
 
 /* --------------------------------Hintergrund---------------------------- */
 .hintergrund {
-    background-image:url(SVG_Hintergrund1.svg);
+    background-image:url(../SVG/SVG_Hintergrund1.svg);
     margin: 0;
     background-position-y: 120px;
     background-size: cover;

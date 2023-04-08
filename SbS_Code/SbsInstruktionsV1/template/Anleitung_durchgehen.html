@@ -22,25 +22,17 @@
 <!----------------------------------------------------BODY----------------------------------------------------->
 
 <body>    
-
-    <!-- Divider für Vollbild-Popup -->
-    <div id="overlayVollbild">
-        <div class="vollbild">
-            <img class="schliessen" src="../../../static/CSS/closecircle.svg" onclick="popupOffV()">
-        </div>
-    </div>
-
-      <!-- Divider für Schritte-Popup -->
+     <!-- Divider für Schritte-Popup -->
      <div id="overlaySchritte">
         <div class="schritte">
-            <img class="schliessen" src="../../../static/CSS/closecircle.svg" onclick="popupOffS()">
+            <img class="schliessen" src="../../../static/SVG/closecircle.svg" onclick="popupOffS()">
             <div id="schrittefenster">
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen.html'">
-                    <img id="Bild1" src="../../../static/CSS/Ofenkartoffeln.jpg">
+                    <img id="Bild1" src="../../../static/Bilder/Ofenkartoffeln.jpg">
                     <p>Schritt 1</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen2.html'">
-                    <img id="Bild2" src="../../../static/CSS/GeschnitteneGurkeKnoblauch.jpeg">
+                    <img id="Bild2" src="../../../static/Bilder/GeschnitteneGurkeKnoblauch.jpeg">
                     <p>Schritt 2</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen3.html'">
@@ -56,15 +48,22 @@
                     <p>Schritt 5</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen6.html'">
-                    <img id="Bild6" src="../../../static/Seehecht_angeordnet.jpg">
+                    <img id="Bild6" src="../../../static/Bilder/Seehecht_angeordnet.jpg">
                     <p>Schritt 6</p>
                 </div>
             </div>
         </div>
     </div> 
 
-    <!-- Header mit Logo und Buttons -->
-    <div class="header">
+    <!-- Divider für Vollbild-Popup -->
+    <div id="overlayVollbild">
+        <div class="vollbild">
+            <img class="schliessen" src="../../../static/SVG/closecircle.svg" onclick="popupOffV()">
+        </div>
+    </div>
+
+     <!-- ------------------------Header mit Logo und Buttons--------------------------- -->
+     <div class="header">
         <div class="boxumAErstellen">
             <input class="aErstellen" type="button" onclick="location.href='Add_page.html'">
         </div>
@@ -72,29 +71,25 @@
         <div class="boxumProfil">
             <input class="profil" type="button" onclick="location.href='Mein_Profil.html'">
         </div>       
+        <div class="logocontainer" onclick="location.href='/'">
+            <img class="logo" src="../../../static/SVG/Logo.svg">
+        </div>
     </div>
 
-    <div class="logocontainer" onclick="location.href='Startbildschirm.html'">
-        <img class="logo" src="../../../static/Logo.svg">
-    </div>
-
-    <!-- Hintergrund -->
-    <div class="hintergrund">
-
+     <!-- ---------------------------Hintergrund--------------------- -->
+     <div class="hintergrund">
         <!-- Seiten-Icon -->
         <button id="ueberblick">
-            <img id="sizeicon" src="../../../static/Overview.svg" onclick="popupOnS()">
+            <img id="sizeicon" src="../../../static/SVG/Overview.svg" onclick="popupOnS()">
         </button>
 
-        <!-- --------------------------Anzeigen Schritt X---------------------------- -->
-
+        <!--Anzeigen Schritt X-->
         <div class="rahmen">
             <div class="aufteilung">
                 <div id="linkeZelle">
-
                     <div>
                         <div class="titel">
-                            <h2>{{ anleitung }}</h2>
+                            <h3>{{ anleitung }}</h3>
                             <!-- Gebratener Seehecht mit Kartoffelstreifen -->
                         </div>
                         <div id="schritt">
@@ -123,14 +118,14 @@
                         <div class="unterueberschrift">Komponenten:</div>
                         <div class="informationsrahmen2" >
                             <div id="komponente1" class="einzelneKomponente">
-                                <img  class="komponentenbild" src="../../../static/Rohe_Kartoffeln.jpg">
+                                <img  class="komponentenbild" src="../../../static/Bilder/Rohe_Kartoffeln.jpg">
                                 <!-- Hier Komponente einfuegen -->
                                 {% for komponente in komponenten %}
                                     <p>{{ komponenten.komponente }}</p>
                                 {% endfor %}
                             </div>
                             <div class="einzelneKomponente">
-                                <img class="komponentenbild" src="../../../static/Oel.jpg">
+                                <img class="komponentenbild" src="../../../static/Bilder/Oel.jpg">
                                 <!-- Hier Komponente einfuegen -->
                                 <p></p>                               
                             </div>
@@ -140,16 +135,19 @@
                 </div>
                 
                 <div class="rechteZelle" id="BildSchritt1" onclick="popupOnV()">
-                        <p hidden>Kein Bild verfügbar</p>
+                        <p>Kein Bild verfügbar</p>
                 </div>
 
             </div>
         </div>
 
+
+     
+
         <div class="vorzurueck">
-            <img class="buttonkleinlinks" src="../../../static/Back button.svg" onload="fortschritt(1,6)"  onclick="location.href='Startbildschirm.html'">
+            <img class="buttonkleinlinks" src="../../../static/SVG/Back button.svg" onload="fortschritt(1,6)"  onclick="location.href='Startbildschirm.html'">
             <svg id="fortschrittsanzeige" onload="fortschritt(1,6)"></svg>
-            <img class="buttonkleinrechts" src="../../../static/weiter.svg"  onclick="location.href='Anleitung_durchgehen2.html'">
+            <img class="buttonkleinrechts" src="../../../static/SVG/weiter.svg"  onclick="location.href='Anleitung_durchgehen2.html'">
         </div>
         <div class="fortschrittszahl">
             1/6
